@@ -5,6 +5,7 @@ import { contactInfo } from '@/lib/data';
 import { formatPhoneNumber } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
+import { useBooking } from '@/components/booking/BookingProvider';
 import { motion } from 'framer-motion';
 import { 
   PhoneIcon, 
@@ -14,6 +15,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 export const Contact: React.FC = () => {
+  const { openBookingModal } = useBooking();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -257,7 +259,10 @@ export const Contact: React.FC = () => {
                 Don't wait! Book your appointment today and experience the difference 
                 of professional hair braiding.
               </p>
-              <Button className="bg-white text-primary-600 hover:bg-primary-50">
+              <Button 
+                className="bg-white text-primary-600 hover:bg-primary-50"
+                onClick={() => openBookingModal()}
+              >
                 Book Now
               </Button>
             </div>

@@ -17,7 +17,7 @@ export const Testimonials: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-secondary-900 mb-4">
+          <h2 className="font-bold text-4xl md:text-5xl text-secondary-900 mb-4">
             What Our Clients Say
           </h2>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
@@ -59,7 +59,7 @@ export const Testimonials: React.FC = () => {
                   {/* Client Info */}
                   <div className="border-t border-secondary-200 pt-4">
                     <div className="flex items-center">
-                      <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center mr-4">
+                      <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center mr-4">
                         <span className="text-white font-semibold text-lg">
                           {testimonial.name.charAt(0)}
                         </span>

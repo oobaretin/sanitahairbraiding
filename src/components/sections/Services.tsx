@@ -22,7 +22,7 @@ export const Services: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-secondary-900 mb-4">
+          <h2 className="font-bold text-4xl md:text-5xl text-secondary-900 mb-4">
             Our Services
           </h2>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
@@ -43,7 +43,7 @@ export const Services: React.FC = () => {
               <Card hover className="h-full flex flex-col">
                 {service.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="bg-gradient-to-r from-primary-500 to-accent-500 text-white px-4 py-1 rounded-full text-sm font-medium flex items-center">
+                    <div className="bg-primary-600 text-white px-4 py-1 rounded-full text-sm font-medium flex items-center">
                       <StarIcon className="w-4 h-4 mr-1" />
                       Most Popular
                     </div>

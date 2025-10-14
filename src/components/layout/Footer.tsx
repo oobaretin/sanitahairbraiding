@@ -17,12 +17,12 @@ export const Footer: React.FC = () => {
               <div className="w-16 h-16 rounded-lg overflow-hidden">
                 <img 
                   src="/images/logo.png" 
-                  alt="Braids by Shisha Logo" 
+                  alt="Niki's African Hair Braiding Logo" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="font-display font-bold text-2xl gradient-text">
-                Braids by Shisha
+              <span className="boldonse-regular text-2xl text-primary-600">
+                Niki's African Hair Braiding
               </span>
             </Link>
             <p className="text-secondary-300 mb-6">
@@ -106,6 +106,11 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/services#boho-braids" className="text-secondary-300 hover:text-white transition-colors duration-200">
+                  Boho Braids
+                </Link>
+              </li>
+              <li>
                 <Link href="/services#goddess-braids" className="text-secondary-300 hover:text-white transition-colors duration-200">
                   Goddess Braids
                 </Link>
@@ -178,7 +183,7 @@ export const Footer: React.FC = () => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-secondary-800 text-center">
           <p className="text-secondary-400">
-            © {new Date().getFullYear()} Braids by Shisha. All rights reserved.
+            © {new Date().getFullYear()} Niki's African Hair Braiding. All rights reserved.
           </p>
           <p className="text-secondary-500 text-sm mt-2">
             Designed by{' '}

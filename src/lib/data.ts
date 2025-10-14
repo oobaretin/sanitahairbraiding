@@ -4,7 +4,7 @@ export const services: Service[] = [
   {
     id: 'box-braids',
     name: 'Box Braids',
-    description: 'Classic box braids with premium synthetic or human hair extensions. Perfect for protective styling and low maintenance.',
+    description: 'Classic African box braids with premium synthetic or human hair extensions. Perfect for protective styling and low maintenance.',
     price: 120,
     duration: '4-6 hours',
     category: 'braids',
@@ -15,6 +15,35 @@ export const services: Service[] = [
       '2-week follow-up consultation'
     ],
     popular: true,
+  },
+  {
+    id: 'boho-braids',
+    name: 'Boho Braids',
+    description: 'Trendy boho-style braids with loose, natural waves and effortless beauty for a free-spirited look.',
+    price: 140,
+    duration: '5-7 hours',
+    category: 'braids',
+    features: [
+      'Boho hair extensions included',
+      'Custom wave pattern',
+      'Natural styling techniques',
+      'Maintenance guide included'
+    ],
+    popular: true,
+  },
+  {
+    id: 'cornrows',
+    name: 'Cornrows',
+    description: 'Traditional African cornrow braids in various patterns and designs for a timeless, cultural look.',
+    price: 80,
+    duration: '2-3 hours',
+    category: 'braids',
+    features: [
+      'Custom pattern design',
+      'Scalp massage included',
+      'Protective styling tips',
+      'Touch-up recommendations'
+    ],
   },
   {
     id: 'goddess-braids',
@@ -28,21 +57,6 @@ export const services: Service[] = [
       'Custom curl pattern',
       'Heat protection treatment',
       'Maintenance guide included'
-    ],
-    popular: true,
-  },
-  {
-    id: 'cornrows',
-    name: 'Cornrows',
-    description: 'Traditional cornrow braids in various patterns and designs for a timeless look.',
-    price: 80,
-    duration: '2-3 hours',
-    category: 'braids',
-    features: [
-      'Custom pattern design',
-      'Scalp massage included',
-      'Protective styling tips',
-      'Touch-up recommendations'
     ],
   },
   {
@@ -92,35 +106,67 @@ export const services: Service[] = [
 export const testimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Sarah Johnson',
-    service: 'Box Braids',
+    name: 'Giana Chavis',
+    service: 'Artistic Hair Style',
     rating: 5,
-    comment: 'Shisha did an amazing job with my box braids! They look so natural and lasted for months. The salon is clean and professional, and she really takes her time to make sure everything is perfect.',
+    comment: 'I had a great experience at Niki\'s she was very professional and understanding. Talented with fast work getting the job done. Everything turned out perfect just how I wanted it I couldn\'t thank Niki enough for helping me with my artistic hair style. I will be back thanks Niki!!!!',
     date: '2024-01-15',
   },
   {
     id: '2',
-    name: 'Maria Rodriguez',
-    service: 'Goddess Braids',
+    name: 'Keane Clarke',
+    service: 'Box Braids',
     rating: 5,
-    comment: 'I\'ve been coming to Shisha for over a year now, and she never disappoints. My goddess braids were absolutely stunning and got so many compliments. Highly recommend!',
-    date: '2024-01-10',
+    comment: 'After my first appointment, I knew I had to return. Niki is amazing. She understood how to braid my hair, hiding my flaws. I\'m skeptical about trying new hairstylists, but Niki did an amazing job in covering them. After a month and 2wks, my hair still looked great…I returned and "she ate it up"…GREAT Job Niki…I\'ll keep coming.',
+    date: '2023-10-15',
   },
   {
     id: '3',
-    name: 'Ashley Williams',
-    service: 'Faux Locs',
+    name: 'Isabel Ajibare',
+    service: 'Hair Styling',
     rating: 5,
-    comment: 'The faux locs Shisha created for me were incredible! They looked so natural and lasted for months. She\'s truly an artist and I can\'t wait to go back.',
-    date: '2024-01-05',
+    comment: 'Nikki is absolutely amazing, I am stuck with her because I love the way she makes my hair.',
+    date: '2024-01-15',
   },
   {
     id: '4',
-    name: 'Jennifer Brown',
-    service: 'Braid Maintenance',
+    name: 'G Taylor',
+    service: 'Crochet Hair',
     rating: 5,
-    comment: 'Regular maintenance with Shisha keeps my braids looking fresh and my scalp healthy. She\'s professional, skilled, and always on time.',
-    date: '2023-12-28',
+    comment: 'Niki has been doing my crochet hair for a while now. She\'s a very nice and polite lady. Niki does an excellent job and she\'s very fast. I will continue to go to her. Thanks Niki!',
+    date: '2023-06-15',
+  },
+  {
+    id: '5',
+    name: 'Seun Matthias',
+    service: 'Braids',
+    rating: 5,
+    comment: 'Wonderful stylist with the best touch. Her braids are very neat, painless and just well done.',
+    date: '2024-01-15',
+  },
+  {
+    id: '6',
+    name: 'Hilda Iyasele',
+    service: 'Braids',
+    rating: 5,
+    comment: 'I moved down here last year and met Niki. I started making my hair and my daughter\'s with Niki for over a year now. She makes very neat braids and the braids are not painful, which is why my daughter loves making her hair with her.',
+    date: '2023-01-15',
+  },
+  {
+    id: '7',
+    name: 'Theresa S',
+    service: 'Boho Braids',
+    rating: 5,
+    comment: 'She did an amazing job on my hair, I got boho braids for the first time, and they came out really nice. They were not painful at all, and they were a reasonable price. My mom got cornrows and they came out really nice.',
+    date: '2023-01-15',
+  },
+  {
+    id: '8',
+    name: 'Tiffany Collins',
+    service: 'Braids',
+    rating: 5,
+    comment: 'Not only is Niki a fast braider, but she\'s also very detailed. Every time I get my hair braided, I get so many compliments. My braids last for a long time, and she offers retouching appointments. I highly recommend Niki for any types of braid styles.',
+    date: '2023-01-15',
   },
 ];
 
@@ -167,36 +213,37 @@ export const galleryImages: GalleryImage[] = [
 ];
 
 export const businessHours: BusinessHours[] = [
-  { day: 'Monday', open: '9:00 AM', close: '6:00 PM' },
-  { day: 'Tuesday', open: '9:00 AM', close: '6:00 PM' },
-  { day: 'Wednesday', open: '9:00 AM', close: '6:00 PM' },
-  { day: 'Thursday', open: '9:00 AM', close: '6:00 PM' },
-  { day: 'Friday', open: '8:30 AM', close: '6:30 PM' },
-  { day: 'Saturday', open: '8:30 AM', close: '6:30 PM' },
-  { day: 'Sunday', open: 'By Appointment', close: '(with Deposit)' },
+  { day: 'Monday', open: '9:00 AM', close: '7:00 PM' },
+  { day: 'Tuesday', open: '9:00 AM', close: '5:00 PM' },
+  { day: 'Wednesday', open: '9:00 AM', close: '7:00 PM' },
+  { day: 'Thursday', open: '9:00 AM', close: '7:00 PM' },
+  { day: 'Friday', open: '8:00 AM', close: '9:00 PM' },
+  { day: 'Saturday', open: '8:00 AM', close: '9:00 PM' },
+  { day: 'Sunday', open: '9:00 AM', close: '7:00 PM' },
 ];
 
 export const socialLinks: SocialLink[] = [
   {
     platform: 'Instagram',
-    url: 'https://instagram.com/braidsbyshisha',
+    url: 'https://instagram.com/nikisafricanbraiding',
     icon: 'instagram',
   },
   {
     platform: 'Nextdoor',
-    url: 'https://nextdoor.com/business/braids-by-shisha',
+    url: 'https://nextdoor.com/business/nikis-african-hair-braiding',
     icon: 'nextdoor',
   },
   {
     platform: 'Facebook',
-    url: 'https://facebook.com/braidsbyshisha',
+    url: 'https://facebook.com/nikisafricanbraiding',
     icon: 'facebook',
   },
 ];
 
 export const contactInfo = {
-  phone: '(281) 515-1173',
-  email: 'info@braidsbyshisha.com',
-  address: '5030 Franz Road, Katy, Texas 77493',
+  phone: '(281) 408-3091',
+  email: 'info@nikisafricanbraiding.com',
+  address: '5303 S Mason Rd, Katy, TX 77450',
+  location: 'Located in: The Brodie at Cinco Ranch Apartments',
   hours: businessHours,
 };

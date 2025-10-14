@@ -47,7 +47,7 @@ export const Contact: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-secondary-900 mb-4">
+          <h2 className="font-bold text-4xl md:text-5xl text-secondary-900 mb-4">
             Get In Touch
           </h2>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
@@ -214,6 +214,9 @@ export const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-lg text-secondary-900 mb-1">Address</h4>
                   <p className="text-secondary-600">{contactInfo.address}</p>
+                  {contactInfo.location && (
+                    <p className="text-secondary-500 text-sm mt-1">{contactInfo.location}</p>
+                  )}
                 </div>
               </div>
             </div>
@@ -251,8 +254,8 @@ export const Contact: React.FC = () => {
             </Card>
 
             {/* CTA */}
-            <div className="bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl p-8 text-white text-center">
-              <h3 className="font-display font-semibold text-2xl mb-4">
+            <div className="bg-primary-600 rounded-2xl p-8 text-white text-center">
+              <h3 className="font-semibold text-2xl mb-4">
                 Ready to Book?
               </h3>
               <p className="mb-6 opacity-90">

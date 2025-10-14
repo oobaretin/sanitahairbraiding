@@ -72,3 +72,11 @@ export interface SocialLink {
   url: string;
   icon: string;
 }
+
+export interface ContactInfo {
+  phone: string;
+  email: string;
+  address: string;
+  location?: string;
+  hours: BusinessHours[];
+}

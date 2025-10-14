@@ -33,12 +33,7 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      )}
+      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg transition-all duration-300"
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -47,12 +42,12 @@ export const Header: React.FC = () => {
             <div className="w-24 h-24 md:w-28 md:h-28 rounded-lg overflow-hidden">
               <img 
                 src="/images/logo.png" 
-                alt="Braids by Shisha Logo" 
+                alt="Niki's African Hair Braiding Logo" 
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="font-display font-bold text-xl md:text-2xl gradient-text">
-              Braids by Shisha
+            <span className="boldonse-regular text-xl md:text-2xl text-primary-600">
+              Niki's African Hair Braiding
             </span>
           </Link>
 
@@ -66,9 +61,7 @@ export const Header: React.FC = () => {
                   'font-medium transition-colors duration-200',
                   pathname === item.href
                     ? 'text-primary-600'
-                    : isScrolled
-                    ? 'text-secondary-700 hover:text-primary-600'
-                    : 'text-white hover:text-pink-200'
+                    : 'text-secondary-700 hover:text-primary-600'
                 )}
               >
                 {item.name}
@@ -80,10 +73,7 @@ export const Header: React.FC = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button
               variant="outline"
-              className={cn(
-                'border-white text-white hover:bg-white hover:text-primary-600',
-                isScrolled && 'border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white'
-              )}
+              className="border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
               onClick={() => openBookingModal()}
             >
               Book Now
@@ -93,12 +83,7 @@ export const Header: React.FC = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={cn(
-              'md:hidden p-2 rounded-lg transition-colors duration-200',
-              isScrolled
-                ? 'text-secondary-700 hover:bg-secondary-100'
-                : 'text-white hover:bg-white/10'
-            )}
+            className="md:hidden p-2 rounded-lg transition-colors duration-200 text-secondary-700 hover:bg-secondary-100"
           >
             {isOpen ? (
               <XMarkIcon className="h-6 w-6" />

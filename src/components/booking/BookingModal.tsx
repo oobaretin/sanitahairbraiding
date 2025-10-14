@@ -113,7 +113,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <Card className="max-h-[90vh] overflow-y-auto">
                 <CardHeader className="flex flex-row items-center justify-between">
                   <div>
-                    <h2 className="font-display font-semibold text-2xl text-secondary-900">
+                    <h2 className="font-semibold text-2xl text-secondary-900">
                       Book Your Appointment
                     </h2>
                     <p className="text-secondary-600 mt-1">

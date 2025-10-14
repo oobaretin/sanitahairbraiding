@@ -45,8 +45,8 @@ export const About: React.FC = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-secondary-900 mb-6">
-              About Braids by Shisha
+            <h2 className="font-bold text-4xl md:text-5xl text-secondary-900 mb-6">
+              About Niki's African Hair Braiding
             </h2>
             
             <p className="text-lg text-secondary-600 mb-6 leading-relaxed">
@@ -81,9 +81,11 @@ export const About: React.FC = () => {
             className="relative"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-              <div className="w-full h-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center">
-                <span className="text-white text-6xl font-bold">S</span>
-              </div>
+              <img 
+                src="/images/about-niki.png" 
+                alt="Niki's African Hair Braiding - About Us" 
+                className="w-full h-full object-cover"
+              />
             </div>
             
             {/* Floating Stats */}

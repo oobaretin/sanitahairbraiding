@@ -8,32 +8,32 @@ import { BookingProvider } from '@/components/booking/BookingProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Braids by Shisha - Professional Hair Braiding Services in Katy, Texas',
-  description: 'Transform your look with expert hair braiding services at Braids by Shisha. Located in Katy, Texas. Book your appointment today for stunning braids that last.',
-  keywords: 'hair braiding, braids, Katy Texas, hair salon, professional braiding, protective styles',
-  authors: [{ name: 'Braids by Shisha' }],
-  creator: 'Braids by Shisha',
-  publisher: 'Braids by Shisha',
+  title: 'Niki\'s African Hair Braiding & Boho Hair Seller - Professional Hair Services in Katy, Texas',
+  description: 'Transform your look with expert African hair braiding and boho hair styles at Niki\'s. Located in Katy, Texas. Book your appointment today for stunning braids and boho styles that last.',
+  keywords: 'African hair braiding, boho hair, braids, Katy Texas, hair salon, professional braiding, protective styles, boho hair seller',
+  authors: [{ name: 'Niki\'s African Hair Braiding' }],
+  creator: 'Niki\'s African Hair Braiding',
+  publisher: 'Niki\'s African Hair Braiding',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.braidsbyshisha.com'),
+  metadataBase: new URL('https://www.nikisafricanbraiding.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Braids by Shisha - Professional Hair Braiding Services',
-    description: 'Transform your look with expert hair braiding services at Braids by Shisha. Located in Katy, Texas.',
-    url: 'https://www.braidsbyshisha.com',
-    siteName: 'Braids by Shisha',
+    title: 'Niki\'s African Hair Braiding & Boho Hair Seller - Professional Hair Services',
+    description: 'Transform your look with expert African hair braiding and boho hair styles at Niki\'s. Located in Katy, Texas.',
+    url: 'https://www.nikisafricanbraiding.com',
+    siteName: 'Niki\'s African Hair Braiding',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Braids by Shisha - Professional Hair Braiding',
+        alt: 'Niki\'s African Hair Braiding & Boho Hair Seller - Professional Hair Services',
       },
     ],
     locale: 'en_US',
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Braids by Shisha - Professional Hair Braiding Services',
-    description: 'Transform your look with expert hair braiding services at Braids by Shisha. Located in Katy, Texas.',
+    title: 'Niki\'s African Hair Braiding & Boho Hair Seller - Professional Hair Services',
+    description: 'Transform your look with expert African hair braiding and boho hair styles at Niki\'s. Located in Katy, Texas.',
     images: ['/og-image.jpg'],
   },
   robots: {

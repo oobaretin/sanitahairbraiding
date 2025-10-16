@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import { Contact } from '@/components/sections/Contact';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Braids by Shisha | Book Your Appointment in Katy, Texas',
-  description: 'Contact Braids by Shisha to book your hair braiding appointment. Located in Katy, Texas. Call (281) 515-1173 or send us a message.',
-  keywords: 'contact braids by shisha, book appointment, Katy Texas, hair braiding salon contact',
+  title: 'Contact Us - Sanitahairbraiding | Book Your Appointment in Katy, Texas',
+  description: 'Contact Sanitahairbraiding in Katy, Texas to book your hair braiding appointment. Professional hair styling services. Call (832) 757-4333 or send us a message.',
+  keywords: 'contact sanitahairbraiding, book appointment, hair braiding salon contact, professional hair services, Katy Texas',
 };
 
 export default function ContactPage() {

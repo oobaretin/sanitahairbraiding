@@ -8,32 +8,32 @@ import { BookingProvider } from '@/components/booking/BookingProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Niki\'s African Hair Braiding & Boho Hair Seller - Professional Hair Services in Katy, Texas',
-  description: 'Transform your look with expert African hair braiding and boho hair styles at Niki\'s. Located in Katy, Texas. Book your appointment today for stunning braids and boho styles that last.',
-  keywords: 'African hair braiding, boho hair, braids, Katy Texas, hair salon, professional braiding, protective styles, boho hair seller',
-  authors: [{ name: 'Niki\'s African Hair Braiding' }],
-  creator: 'Niki\'s African Hair Braiding',
-  publisher: 'Niki\'s African Hair Braiding',
+  title: 'Sanitahairbraiding - Professional Hair Braiding Services in Katy, Texas',
+  description: 'Transform your look with expert hair braiding services at Sanitahairbraiding in Katy, Texas. Professional box braids, boho braids, goddess braids, and more. Book your appointment today for stunning styles that last.',
+  keywords: 'hair braiding, box braids, boho braids, goddess braids, faux locs, cornrows, professional braiding, protective styles, hair salon, Katy Texas',
+  authors: [{ name: 'Sanitahairbraiding' }],
+  creator: 'Sanitahairbraiding',
+  publisher: 'Sanitahairbraiding',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.nikisafricanbraiding.com'),
+  metadataBase: new URL('https://www.sanitahairbraiding.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Niki\'s African Hair Braiding & Boho Hair Seller - Professional Hair Services',
-    description: 'Transform your look with expert African hair braiding and boho hair styles at Niki\'s. Located in Katy, Texas.',
-    url: 'https://www.nikisafricanbraiding.com',
-    siteName: 'Niki\'s African Hair Braiding',
+    title: 'Sanitahairbraiding - Professional Hair Braiding Services in Katy, Texas',
+    description: 'Transform your look with expert hair braiding services at Sanitahairbraiding in Katy, Texas. Professional box braids, boho braids, goddess braids, and more.',
+    url: 'https://www.sanitahairbraiding.com',
+    siteName: 'Sanitahairbraiding',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Niki\'s African Hair Braiding & Boho Hair Seller - Professional Hair Services',
+        alt: 'Sanitahairbraiding - Professional Hair Braiding Services',
       },
     ],
     locale: 'en_US',
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Niki\'s African Hair Braiding & Boho Hair Seller - Professional Hair Services',
-    description: 'Transform your look with expert African hair braiding and boho hair styles at Niki\'s. Located in Katy, Texas.',
+    title: 'Sanitahairbraiding - Professional Hair Braiding Services in Katy, Texas',
+    description: 'Transform your look with expert hair braiding services at Sanitahairbraiding in Katy, Texas. Professional box braids, boho braids, goddess braids, and more.',
     images: ['/og-image.jpg'],
   },
   robots: {

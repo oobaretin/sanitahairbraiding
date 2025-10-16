@@ -42,12 +42,12 @@ export const Header: React.FC = () => {
             <div className="w-24 h-24 md:w-28 md:h-28 rounded-lg overflow-hidden">
               <img 
                 src="/images/logo.png" 
-                alt="Niki's African Hair Braiding Logo" 
+                alt="Sanitahairbraiding Logo" 
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="boldonse-regular text-xl md:text-2xl text-primary-600">
-              Niki's African Hair Braiding
+            <span className="font-kablammo text-2xl md:text-3xl lg:text-4xl text-primary-600">
+              Sanitahairbraiding
             </span>
           </Link>
 

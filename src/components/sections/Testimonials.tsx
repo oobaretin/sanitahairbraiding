@@ -17,12 +17,12 @@ export const Testimonials: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-bold text-4xl md:text-5xl text-secondary-900 mb-4">
+          <h2 className="font-boldonse font-normal text-4xl md:text-5xl text-secondary-900 mb-4">
             What Our Clients Say
           </h2>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our satisfied clients have to say 
-            about their experience with Braids by Shisha.
+            about their experience with Sanitahairbraiding.
           </p>
         </motion.div>
 
@@ -92,7 +92,7 @@ export const Testimonials: React.FC = () => {
               Ready to Experience the Difference?
             </h3>
             <p className="text-secondary-600 mb-6">
-              Join hundreds of satisfied clients who trust Braids by Shisha for their hair braiding needs.
+              Join hundreds of satisfied clients who trust Sanitahairbraiding for their hair braiding needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="btn-primary">

@@ -1,13 +1,17 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
+import { useBooking } from '@/components/booking/BookingProvider';
 import { 
   HeartIcon, 
   UserGroupIcon, 
   SparklesIcon,
-  ShieldCheckIcon 
+  ShieldCheckIcon,
+  XMarkIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon
 } from '@heroicons/react/24/outline';
 
 const features = [
@@ -33,7 +37,56 @@ const features = [
   }
 ];
 
+const galleryImages = [
+  {
+    id: 1,
+    src: '/images/hero-slide-1.png',
+    alt: 'Beautiful Hair Braiding Work - Box Braids'
+  },
+  {
+    id: 2,
+    src: '/images/hero-slide-2.png',
+    alt: 'Professional Hair Styling - Boho Braids'
+  },
+  {
+    id: 3,
+    src: '/images/hero-slide-3.png',
+    alt: 'Expert Braiding Services - Goddess Braids'
+  },
+  {
+    id: 4,
+    src: '/images/hero-slide-4.png',
+    alt: 'Stunning Hair Transformations - Faux Locs'
+  },
+  {
+    id: 5,
+    src: '/images/hero-slide-5.png',
+    alt: 'Premium Hair Care - Cornrows'
+  }
+];
+
 export const About: React.FC = () => {
+  const { openBookingModal } = useBooking();
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openGallery = () => {
+    setIsGalleryOpen(true);
+    setCurrentImageIndex(0);
+  };
+
+  const closeGallery = () => {
+    setIsGalleryOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
   return (
     <section className="section-padding bg-secondary-50">
       <div className="container-custom">
@@ -65,11 +118,11 @@ export const About: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
-                Meet Our Team
+              <Button size="lg" onClick={() => openBookingModal()}>
+                Book Your Appointment
               </Button>
-              <Button variant="outline" size="lg">
-                Our Story
+              <Button variant="outline" size="lg" onClick={openGallery}>
+                View Gallery
               </Button>
             </div>
 
@@ -129,6 +182,109 @@ export const About: React.FC = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Gallery Modal */}
+      <AnimatePresence>
+        {isGalleryOpen && (
+          <div className="fixed inset-0 z-50 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4">
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+                onClick={closeGallery}
+              />
+
+              {/* Modal */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="relative w-full max-w-4xl"
+              >
+                <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
+                  {/* Header */}
+                  <div className="flex items-center justify-between p-6 border-b border-secondary-200">
+                    <h2 className="font-boldonse font-normal text-2xl text-secondary-900">
+                      Our Work Gallery
+                    </h2>
+                    <button
+                      onClick={closeGallery}
+                      className="p-2 hover:bg-secondary-100 rounded-lg transition-colors duration-200"
+                    >
+                      <XMarkIcon className="w-6 h-6 text-secondary-500" />
+                    </button>
+                  </div>
+
+                  {/* Image Display */}
+                  <div className="relative">
+                    <div className="aspect-[4/3] bg-secondary-100 flex items-center justify-center">
+                      <img
+                        src={galleryImages[currentImageIndex].src}
+                        alt={galleryImages[currentImageIndex].alt}
+                        className="max-w-full max-h-full object-contain"
+                        onError={(e) => {
+                          console.error('Gallery image failed to load:', galleryImages[currentImageIndex].src);
+                          e.currentTarget.style.display = 'none';
+                        }}
+                      />
+                    </div>
+
+                    {/* Navigation Arrows */}
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-secondary-700 hover:text-secondary-800 backdrop-blur-sm rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeftIcon className="w-6 h-6" />
+                    </button>
+
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-secondary-700 hover:text-secondary-800 backdrop-blur-sm rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300"
+                      aria-label="Next image"
+                    >
+                      <ChevronRightIcon className="w-6 h-6" />
+                    </button>
+                  </div>
+
+                  {/* Thumbnail Navigation */}
+                  <div className="p-6 border-t border-secondary-200">
+                    <div className="flex justify-center space-x-3 overflow-x-auto">
+                      {galleryImages.map((image, index) => (
+                        <button
+                          key={image.id}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                            index === currentImageIndex
+                              ? 'border-primary-500 shadow-lg'
+                              : 'border-secondary-200 hover:border-secondary-300'
+                          }`}
+                        >
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                    
+                    {/* Image Counter */}
+                    <div className="text-center mt-4">
+                      <span className="text-secondary-600 text-sm">
+                        {currentImageIndex + 1} of {galleryImages.length}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

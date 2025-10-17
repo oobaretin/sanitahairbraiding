@@ -47,6 +47,14 @@ export const HeroSlider: React.FC = () => {
 
   return (
     <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900">
+      {/* Static border container */}
+      <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div className="relative max-w-5xl max-h-[70vh] w-full h-full flex items-center justify-center">
+          {/* Static decorative border */}
+          <div className="absolute inset-0 border-4 border-white/20 rounded-2xl z-20" />
+        </div>
+      </div>
+
       {/* Image Slider */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -77,8 +85,6 @@ export const HeroSlider: React.FC = () => {
               
               {/* Gradient overlay for better text readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl z-10" />
-              {/* Decorative border */}
-              <div className="absolute inset-0 border-4 border-white/20 rounded-2xl z-20" />
             </div>
           </div>
         </motion.div>

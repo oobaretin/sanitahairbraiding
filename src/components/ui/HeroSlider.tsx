@@ -44,17 +44,6 @@ export const HeroSlider: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
-
-  const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? heroImages.length - 1 : currentIndex - 1);
-  };
-
-  const goToNext = () => {
-    setCurrentIndex(currentIndex === heroImages.length - 1 ? 0 : currentIndex + 1);
-  };
 
   return (
     <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900">
@@ -95,49 +84,6 @@ export const HeroSlider: React.FC = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={goToPrevious}
-        className="absolute left-2 sm:left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-primary-700 hover:text-primary-800 backdrop-blur-sm rounded-full p-2 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-        aria-label="Previous image"
-      >
-        <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      <button
-        onClick={goToNext}
-        className="absolute right-2 sm:right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-primary-700 hover:text-primary-800 backdrop-blur-sm rounded-full p-2 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-        aria-label="Next image"
-      >
-        <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* Dots Indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2 sm:space-x-3">
-        {heroImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 shadow-lg ${
-              index === currentIndex 
-                ? 'bg-white scale-125 shadow-xl' 
-                : 'bg-white/60 hover:bg-white/80 hover:scale-110'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Slide Counter */}
-      <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-20 bg-white/90 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1 sm:py-2 shadow-lg">
-        <span className="text-primary-700 text-xs sm:text-sm font-semibold">
-          {currentIndex + 1} / {heroImages.length}
-        </span>
-      </div>
     </div>
   );
 };

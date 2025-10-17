@@ -10,26 +10,26 @@ export const Hero: React.FC = () => {
   const { openBookingModal } = useBooking();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
       {/* Background Slider */}
       <div className="absolute inset-0 z-0">
         <HeroSlider />
       </div>
 
       {/* Content */}
-      <div className="relative z-20 container-custom text-center">
+      <div className="relative z-20 container-custom text-center px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="font-boldonse font-normal text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+          <h1 className="font-boldonse font-normal text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white mb-4 sm:mb-6 leading-tight">
             Sanitahairbraiding
             <span className="block text-primary-200">Professional Hair Braiding</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
             Transform your look with expert hair braiding services in Katy, Texas. 
             Beautiful, long-lasting braids and trendy styles that enhance your natural beauty.
           </p>

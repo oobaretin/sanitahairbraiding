@@ -68,29 +68,29 @@ export const HeroSlider: React.FC = () => {
           transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           className="absolute inset-0"
         >
-          <div className="relative w-full h-full">
-            {/* Fallback background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl mx-auto my-6 max-w-5xl max-h-[70vh] left-1/2 transform -translate-x-1/2" />
-            
-            <img
-              src={heroImages[currentIndex].src}
-              alt={heroImages[currentIndex].alt}
-              className="relative w-full h-full object-contain object-center rounded-2xl mx-auto my-6 shadow-2xl z-10 max-w-5xl max-h-[70vh] block"
-              onError={(e) => {
-                console.error('❌ Image failed to load:', heroImages[currentIndex].src);
-                console.error('Error details:', e);
-                // Hide the image and show fallback background
-                e.currentTarget.style.display = 'none';
-              }}
-              onLoad={() => {
-                console.log('✅ Image loaded successfully:', heroImages[currentIndex].src);
-              }}
-            />
-            
-            {/* Gradient overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl mx-auto my-6 max-w-5xl max-h-[70vh] left-1/2 transform -translate-x-1/2 z-20" />
-            {/* Decorative border */}
-            <div className="absolute inset-0 border-4 border-white/20 rounded-2xl mx-auto my-6 max-w-5xl max-h-[70vh] left-1/2 transform -translate-x-1/2 z-30" />
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Image container with proper positioning */}
+            <div className="relative max-w-5xl max-h-[70vh] w-full h-full flex items-center justify-center">
+              <img
+                src={heroImages[currentIndex].src}
+                alt={heroImages[currentIndex].alt}
+                className="w-full h-full object-contain object-center rounded-2xl shadow-2xl"
+                onError={(e) => {
+                  console.error('❌ Image failed to load:', heroImages[currentIndex].src);
+                  console.error('Error details:', e);
+                  // Hide the image and show fallback background
+                  e.currentTarget.style.display = 'none';
+                }}
+                onLoad={() => {
+                  console.log('✅ Image loaded successfully:', heroImages[currentIndex].src);
+                }}
+              />
+              
+              {/* Gradient overlay for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl z-10" />
+              {/* Decorative border */}
+              <div className="absolute inset-0 border-4 border-white/20 rounded-2xl z-20" />
+            </div>
           </div>
         </motion.div>
       </AnimatePresence>
@@ -98,31 +98,31 @@ export const HeroSlider: React.FC = () => {
       {/* Navigation Arrows */}
       <button
         onClick={goToPrevious}
-        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-primary-700 hover:text-primary-800 backdrop-blur-sm rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        className="absolute left-2 sm:left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-primary-700 hover:text-primary-800 backdrop-blur-sm rounded-full p-2 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         aria-label="Previous image"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
       <button
         onClick={goToNext}
-        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-primary-700 hover:text-primary-800 backdrop-blur-sm rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        className="absolute right-2 sm:right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-primary-700 hover:text-primary-800 backdrop-blur-sm rounded-full p-2 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         aria-label="Next image"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2 sm:space-x-3">
         {heroImages.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-4 h-4 rounded-full transition-all duration-300 shadow-lg ${
+            className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 shadow-lg ${
               index === currentIndex 
                 ? 'bg-white scale-125 shadow-xl' 
                 : 'bg-white/60 hover:bg-white/80 hover:scale-110'
@@ -133,8 +133,8 @@ export const HeroSlider: React.FC = () => {
       </div>
 
       {/* Slide Counter */}
-      <div className="absolute top-6 right-6 z-20 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-        <span className="text-primary-700 text-sm font-semibold">
+      <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-20 bg-white/90 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1 sm:py-2 shadow-lg">
+        <span className="text-primary-700 text-xs sm:text-sm font-semibold">
           {currentIndex + 1} / {heroImages.length}
         </span>
       </div>

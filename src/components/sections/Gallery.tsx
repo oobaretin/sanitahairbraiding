@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 // Gallery images - using the hero slider images for now
 const galleryImages = [
@@ -40,6 +40,42 @@ const galleryImages = [
 
 export const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
+
+  const goToPrevious = () => {
+    if (selectedImage) {
+      const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+      const previousIndex = currentIndex > 0 ? currentIndex - 1 : galleryImages.length - 1;
+      setSelectedImage(galleryImages[previousIndex]);
+    }
+  };
+
+  const goToNext = () => {
+    if (selectedImage) {
+      const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+      const nextIndex = currentIndex < galleryImages.length - 1 ? currentIndex + 1 : 0;
+      setSelectedImage(galleryImages[nextIndex]);
+    }
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (selectedImage) {
+        if (event.key === 'ArrowLeft') {
+          goToPrevious();
+        } else if (event.key === 'ArrowRight') {
+          goToNext();
+        } else if (event.key === 'Escape') {
+          setSelectedImage(null);
+        }
+      }
+    };
+
+    if (selectedImage) {
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [selectedImage]);
 
   return (
     <section className="section-padding bg-secondary-50">
@@ -110,12 +146,31 @@ export const Gallery: React.FC = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 className="relative max-w-6xl max-h-[95vh] w-full h-full flex items-center justify-center"
               >
+                {/* Close Button */}
                 <button
                   onClick={() => setSelectedImage(null)}
                   className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors duration-200"
                 >
                   <XMarkIcon className="w-6 h-6 text-secondary-900" />
                 </button>
+
+                {/* Previous Button */}
+                <button
+                  onClick={goToPrevious}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-3 hover:bg-white transition-colors duration-200"
+                >
+                  <ChevronLeftIcon className="w-6 h-6 text-secondary-900" />
+                </button>
+
+                {/* Next Button */}
+                <button
+                  onClick={goToNext}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-3 hover:bg-white transition-colors duration-200"
+                >
+                  <ChevronRightIcon className="w-6 h-6 text-secondary-900" />
+                </button>
+
+                {/* Image */}
                 <div className="relative w-full h-full flex items-center justify-center">
                   <img
                     src={selectedImage.src}
@@ -124,6 +179,8 @@ export const Gallery: React.FC = () => {
                     style={{ maxHeight: '90vh' }}
                   />
                 </div>
+
+                {/* Image Info */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 rounded-b-xl">
                   <p className="text-white text-lg font-medium">{selectedImage.category}</p>
                 </div>

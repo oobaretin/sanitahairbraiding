@@ -94,10 +94,7 @@ export const Testimonials: React.FC = () => {
             <p className="text-secondary-600 mb-6">
               Join hundreds of satisfied clients who trust Sanitahairbraiding for their hair braiding needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">
-                Book Your Appointment
-              </button>
+            <div className="flex justify-center">
               <button className="btn-outline">
                 View Gallery
               </button>

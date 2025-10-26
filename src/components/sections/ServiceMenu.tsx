@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDownIcon, ChevronUpIcon, PhoneIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon, ChevronUpIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { useBooking } from '@/components/booking/BookingProvider';
 import { SALON_DATA, SALON_INFO } from '@/data/salonData';
 
@@ -170,75 +170,6 @@ export const ServiceMenu: React.FC = () => {
           ))}
         </div>
 
-        {/* Contact Information */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-16 bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto"
-        >
-          <div className="text-center mb-8">
-            <h3 className="font-boldonse font-normal text-3xl text-secondary-900 mb-4">
-              Ready to Book?
-            </h3>
-            <p className="text-lg text-secondary-600">
-              Contact us directly or use our booking system to schedule your appointment.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Phone */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <PhoneIcon className="w-8 h-8 text-primary-600" />
-              </div>
-              <h4 className="font-semibold text-lg text-secondary-900 mb-2">Call Us</h4>
-              <a
-                href={`tel:${SALON_INFO.phone}`}
-                className="text-primary-600 hover:text-primary-700 font-medium"
-              >
-                {SALON_INFO.phone}
-              </a>
-            </div>
-
-            {/* Location */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPinIcon className="w-8 h-8 text-primary-600" />
-              </div>
-              <h4 className="font-semibold text-lg text-secondary-900 mb-2">Visit Us</h4>
-              <p className="text-secondary-600 text-sm">
-                {SALON_INFO.address}
-              </p>
-              <p className="text-secondary-500 text-xs mt-1">
-                {SALON_INFO.location}
-              </p>
-            </div>
-
-            {/* Hours */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <ClockIcon className="w-8 h-8 text-primary-600" />
-              </div>
-              <h4 className="font-semibold text-lg text-secondary-900 mb-2">Hours</h4>
-              <div className="text-secondary-600 text-sm space-y-1">
-                <p>Mon-Fri: {SALON_INFO.hours.weekdays}</p>
-                <p>Sat: {SALON_INFO.hours.saturday}</p>
-                <p>Sun: {SALON_INFO.hours.sunday}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <button
-              onClick={() => openBookingModal('general')}
-              className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-medium text-lg transition-colors duration-200"
-            >
-              Book Your Appointment
-            </button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

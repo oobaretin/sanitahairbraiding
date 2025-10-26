@@ -71,13 +71,14 @@ export const Header: React.FC = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="outline"
-              className="border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
-              onClick={() => openBookingModal()}
-            >
-              Book Now
-            </Button>
+            <Link href="/services">
+              <Button
+                variant="outline"
+                className="border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
+              >
+                Book Now
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -113,7 +114,9 @@ export const Header: React.FC = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button className="w-full" onClick={() => openBookingModal()}>Book Now</Button>
+                <Link href="/services" className="block">
+                  <Button className="w-full">Book Now</Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { testimonials } from '@/lib/data';
 import { Card, CardContent } from '@/components/ui/Card';
 import { motion } from 'framer-motion';
@@ -95,9 +96,9 @@ export const Testimonials: React.FC = () => {
               Join hundreds of satisfied clients who trust Sanitahairbraiding for their hair braiding needs.
             </p>
             <div className="flex justify-center">
-              <button className="btn-outline">
+              <Link href="/gallery" className="btn-outline">
                 View Gallery
-              </button>
+              </Link>
             </div>
           </div>
         </motion.div>

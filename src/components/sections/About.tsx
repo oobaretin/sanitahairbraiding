@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { useBooking } from '@/components/booking/BookingProvider';
@@ -118,9 +119,11 @@ export const About: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" onClick={() => openBookingModal()}>
-                Book Your Appointment
-              </Button>
+              <Link href="/services">
+                <Button size="lg">
+                  Book Your Appointment
+                </Button>
+              </Link>
               <Button variant="outline" size="lg" onClick={openGallery}>
                 View Gallery
               </Button>

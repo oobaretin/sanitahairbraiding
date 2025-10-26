@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon, ChevronUpIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { useBooking } from '@/components/booking/BookingProvider';
@@ -145,12 +146,12 @@ export const ServiceMenu: React.FC = () => {
                                             <span className="text-xl font-bold text-primary-600">
                                               ${variation.price}
                                             </span>
-                                            <button
-                                              onClick={() => handleBookingClick(subcategoryName, variation.name, variation.price)}
-                                              className="bg-primary-600 hover:bg-primary-700 text-white px-3 py-2 rounded-lg font-medium transition-colors duration-200 text-sm"
+                                            <Link
+                                              href="/services"
+                                              className="bg-primary-600 hover:bg-primary-700 text-white px-3 py-2 rounded-lg font-medium transition-colors duration-200 text-sm inline-block"
                                             >
                                               Book Now
-                                            </button>
+                                            </Link>
                                           </div>
                                         </motion.div>
                                       ))}

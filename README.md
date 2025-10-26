@@ -2,6 +2,8 @@
 
 A modern, professional website for Sanitahairbraiding, a premium hair braiding salon. Built with Next.js 14, TypeScript, and Tailwind CSS for optimal performance and user experience.
 
+<!-- Trigger deployment -->
+
 ## 🚀 Features
 
 ### Core Features

@@ -129,30 +129,30 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-2xl"
+              className="relative w-full max-w-2xl mx-4"
             >
-              <Card className="max-h-[90vh] overflow-y-auto">
-                <CardHeader className="flex flex-row items-center justify-between">
-                  <div>
-                    <h2 className="font-semibold text-2xl text-secondary-900">
+              <Card className="max-h-[95vh] overflow-y-auto">
+                <CardHeader className="flex flex-row items-center justify-between p-4 sm:p-6">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="font-semibold text-xl sm:text-2xl text-secondary-900">
                       Book Your Service
                     </h2>
                     {selectedService && (
-                      <p className="text-secondary-600 mt-1">
+                      <p className="text-secondary-600 mt-1 text-sm sm:text-base truncate">
                         Service: {selectedService}
                       </p>
                     )}
                   </div>
                   <button
                     onClick={handleClose}
-                    className="p-2 hover:bg-secondary-100 rounded-lg transition-colors duration-200"
+                    className="p-2 hover:bg-secondary-100 rounded-lg transition-colors duration-200 flex-shrink-0 ml-2"
                   >
-                    <XMarkIcon className="w-6 h-6 text-secondary-500" />
+                    <XMarkIcon className="w-5 h-5 sm:w-6 sm:h-6 text-secondary-500" />
                   </button>
                 </CardHeader>
 
-                <CardContent>
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <CardContent className="p-4 sm:p-6">
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
                     {/* Full Name */}
                     <div>
                       <label className="block text-sm font-medium text-secondary-700 mb-2">
@@ -244,11 +244,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       <label className="block text-sm font-medium text-secondary-700 mb-3">
                         Preferred Payment Method *
                       </label>
-                      <div className="space-y-3">
+                      <div className="space-y-2 sm:space-y-3">
                         {paymentMethods.map((method) => (
                           <label
                             key={method.id}
-                            className={`block cursor-pointer rounded-lg border-2 p-4 transition-all duration-200 ${
+                            className={`block cursor-pointer rounded-lg border-2 p-3 sm:p-4 transition-all duration-200 ${
                               selectedPaymentMethod === method.id
                                 ? 'border-primary-500 bg-primary-50'
                                 : 'border-secondary-200 hover:border-secondary-300 bg-white'
@@ -261,36 +261,36 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                               className="sr-only"
                             />
                             <div className="flex items-center">
-                              <div className="w-10 h-10 mr-3 flex items-center justify-center flex-shrink-0">
+                              <div className="w-8 h-8 sm:w-10 sm:h-10 mr-2 sm:mr-3 flex items-center justify-center flex-shrink-0">
                                 {method.icon.startsWith('/') ? (
                                   <img 
                                     src={method.icon} 
                                     alt={`${method.label} logo`}
-                                    className="w-6 h-6 object-contain"
+                                    className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
                                     onError={(e) => {
                                       console.error('Failed to load image:', method.icon);
                                       e.currentTarget.style.display = 'none';
                                     }}
                                   />
                                 ) : (
-                                  <span className="text-xl">{method.icon}</span>
+                                  <span className="text-lg sm:text-xl">{method.icon}</span>
                                 )}
                               </div>
-                              <div className="flex-1">
-                                <div className="font-medium text-secondary-900">
+                              <div className="flex-1 min-w-0">
+                                <div className="font-medium text-secondary-900 text-sm sm:text-base">
                                   {method.label}
                                 </div>
-                                <div className="text-sm text-secondary-600">
+                                <div className="text-xs sm:text-sm text-secondary-600 truncate">
                                   {method.description}
                                 </div>
                               </div>
-                              <div className="ml-2">
+                              <div className="ml-2 flex-shrink-0">
                                 {selectedPaymentMethod === method.id ? (
-                                  <div className="w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center">
-                                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                                  <div className="w-4 h-4 sm:w-5 sm:h-5 bg-primary-500 rounded-full flex items-center justify-center">
+                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full"></div>
                                   </div>
                                 ) : (
-                                  <div className="w-5 h-5 border-2 border-secondary-300 rounded-full"></div>
+                                  <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-secondary-300 rounded-full"></div>
                                 )}
                               </div>
                             </div>

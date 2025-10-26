@@ -261,25 +261,34 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                               className="sr-only"
                             />
                             <div className="flex items-center">
-                              <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                              <div className="w-10 h-10 mr-4 flex items-center justify-center flex-shrink-0">
                                 {method.icon.startsWith('/') ? (
                                   <img 
                                     src={method.icon} 
-                                    alt={method.label}
-                                    className="w-6 h-6 object-contain"
+                                    alt={`${method.label} logo`}
+                                    className="w-8 h-8 object-contain"
+                                    onError={(e) => {
+                                      console.error('Failed to load image:', method.icon);
+                                      e.currentTarget.style.display = 'none';
+                                    }}
                                   />
                                 ) : (
                                   <span className="text-2xl">{method.icon}</span>
                                 )}
                               </div>
-                              <div>
-                                <div className="font-medium text-secondary-900">
+                              <div className="flex-1">
+                                <div className="font-semibold text-secondary-900 text-base">
                                   {method.label}
                                 </div>
-                                <div className="text-sm text-secondary-600">
+                                <div className="text-sm text-secondary-600 mt-1">
                                   {method.description}
                                 </div>
                               </div>
+                              {selectedPaymentMethod === method.id && (
+                                <div className="w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center ml-2">
+                                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                                </div>
+                              )}
                             </div>
                           </label>
                         ))}

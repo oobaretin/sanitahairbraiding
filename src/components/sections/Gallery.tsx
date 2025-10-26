@@ -108,7 +108,7 @@ export const Gallery: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="relative max-w-4xl max-h-[90vh] w-full"
+                className="relative max-w-6xl max-h-[95vh] w-full h-full flex items-center justify-center"
               >
                 <button
                   onClick={() => setSelectedImage(null)}
@@ -116,11 +116,14 @@ export const Gallery: React.FC = () => {
                 >
                   <XMarkIcon className="w-6 h-6 text-secondary-900" />
                 </button>
-                <img
-                  src={selectedImage.src}
-                  alt={selectedImage.alt}
-                  className="w-full h-full object-contain rounded-xl"
-                />
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <img
+                    src={selectedImage.src}
+                    alt={selectedImage.alt}
+                    className="max-w-full max-h-full object-contain rounded-xl shadow-2xl"
+                    style={{ maxHeight: '90vh' }}
+                  />
+                </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 rounded-b-xl">
                   <p className="text-white text-lg font-medium">{selectedImage.category}</p>
                 </div>

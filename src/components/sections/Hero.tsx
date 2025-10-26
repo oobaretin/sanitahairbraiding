@@ -1,13 +1,12 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { HeroSlider } from '@/components/ui/HeroSlider';
-import { useBooking } from '@/components/booking/BookingProvider';
 import { motion } from 'framer-motion';
 
 export const Hero: React.FC = () => {
-  const { openBookingModal } = useBooking();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
@@ -35,13 +34,14 @@ export const Hero: React.FC = () => {
           </p>
 
           <div className="flex justify-center">
-            <Button 
-              size="lg" 
-              className="bg-white text-primary-600 hover:bg-primary-50"
-              onClick={() => openBookingModal()}
-            >
-              Book Your Appointment
-            </Button>
+            <Link href="/services">
+              <Button 
+                size="lg" 
+                className="bg-white text-primary-600 hover:bg-primary-50"
+              >
+                Book Your Appointment
+              </Button>
+            </Link>
           </div>
 
           {/* Trust Indicators */}

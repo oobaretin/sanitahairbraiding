@@ -146,12 +146,12 @@ export const ServiceMenu: React.FC = () => {
                                             <span className="text-xl font-bold text-primary-600">
                                               ${variation.price}
                                             </span>
-                                            <Link
-                                              href="/services"
-                                              className="bg-primary-600 hover:bg-primary-700 text-white px-3 py-2 rounded-lg font-medium transition-colors duration-200 text-sm inline-block"
+                                            <button
+                                              onClick={() => handleBookingClick(subcategoryName, variation.name, variation.price)}
+                                              className="bg-primary-600 hover:bg-primary-700 text-white px-3 py-2 rounded-lg font-medium transition-colors duration-200 text-sm"
                                             >
                                               Book Now
-                                            </Link>
+                                            </button>
                                           </div>
                                         </motion.div>
                                       ))}

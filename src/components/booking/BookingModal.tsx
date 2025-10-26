@@ -241,17 +241,17 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
                     {/* Payment Method */}
                     <div>
-                      <label className="block text-sm font-medium text-secondary-700 mb-2">
+                      <label className="block text-sm font-medium text-secondary-700 mb-3">
                         Preferred Payment Method *
                       </label>
                       <div className="space-y-3">
                         {paymentMethods.map((method) => (
                           <label
                             key={method.id}
-                            className={`relative cursor-pointer rounded-lg border-2 p-4 transition-all duration-200 ${
+                            className={`block cursor-pointer rounded-lg border-2 p-4 transition-all duration-200 ${
                               selectedPaymentMethod === method.id
                                 ? 'border-primary-500 bg-primary-50'
-                                : 'border-secondary-200 hover:border-secondary-300'
+                                : 'border-secondary-200 hover:border-secondary-300 bg-white'
                             }`}
                           >
                             <input
@@ -261,40 +261,44 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                               className="sr-only"
                             />
                             <div className="flex items-center">
-                              <div className="w-10 h-10 mr-4 flex items-center justify-center flex-shrink-0">
+                              <div className="w-10 h-10 mr-3 flex items-center justify-center flex-shrink-0">
                                 {method.icon.startsWith('/') ? (
                                   <img 
                                     src={method.icon} 
                                     alt={`${method.label} logo`}
-                                    className="w-8 h-8 object-contain"
+                                    className="w-6 h-6 object-contain"
                                     onError={(e) => {
                                       console.error('Failed to load image:', method.icon);
                                       e.currentTarget.style.display = 'none';
                                     }}
                                   />
                                 ) : (
-                                  <span className="text-2xl">{method.icon}</span>
+                                  <span className="text-xl">{method.icon}</span>
                                 )}
                               </div>
                               <div className="flex-1">
-                                <div className="font-semibold text-secondary-900 text-base">
+                                <div className="font-medium text-secondary-900">
                                   {method.label}
                                 </div>
-                                <div className="text-sm text-secondary-600 mt-1">
+                                <div className="text-sm text-secondary-600">
                                   {method.description}
                                 </div>
                               </div>
-                              {selectedPaymentMethod === method.id && (
-                                <div className="w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center ml-2">
-                                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                                </div>
-                              )}
+                              <div className="ml-2">
+                                {selectedPaymentMethod === method.id ? (
+                                  <div className="w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center">
+                                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                                  </div>
+                                ) : (
+                                  <div className="w-5 h-5 border-2 border-secondary-300 rounded-full"></div>
+                                )}
+                              </div>
                             </div>
                           </label>
                         ))}
                       </div>
                       {errors.paymentMethod && (
-                        <p className="text-red-600 text-sm mt-1">{errors.paymentMethod.message}</p>
+                        <p className="text-red-600 text-sm mt-2">{errors.paymentMethod.message}</p>
                       )}
                     </div>
 

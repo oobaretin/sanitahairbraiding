@@ -33,9 +33,24 @@ const timeSlots = [
 ];
 
 const paymentMethods = [
-  { id: 'cash', label: 'Cash', description: 'Pay in person at appointment' },
-  { id: 'zelle', label: 'Zelle', description: 'Send to: [Your Zelle Info]' },
-  { id: 'cashapp', label: 'Cash App', description: 'Send to: [Your Cash App Info]' }
+  { 
+    id: 'cash', 
+    label: 'Cash', 
+    description: 'Pay in person at appointment',
+    icon: '💰'
+  },
+  { 
+    id: 'zelle', 
+    label: 'Zelle', 
+    description: 'Send to: [Your Zelle Info]',
+    icon: '/images/zelle-logo1.png'
+  },
+  { 
+    id: 'cashapp', 
+    label: 'Cash App', 
+    description: 'Send to: [Your Cash App Info]',
+    icon: '/images/cashapp.logo1.png'
+  }
 ];
 
 export const BookingModal: React.FC<BookingModalProps> = ({
@@ -246,7 +261,17 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                               className="sr-only"
                             />
                             <div className="flex items-center">
-                              <span className="text-2xl mr-3">💰</span>
+                              <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                                {method.icon.startsWith('/') ? (
+                                  <img 
+                                    src={method.icon} 
+                                    alt={method.label}
+                                    className="w-6 h-6 object-contain"
+                                  />
+                                ) : (
+                                  <span className="text-2xl">{method.icon}</span>
+                                )}
+                              </div>
                               <div>
                                 <div className="font-medium text-secondary-900">
                                   {method.label}

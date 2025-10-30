@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1 lg:pr-8">
-            <Link href="/" className="flex items-center space-x-3 mb-4">
+            <Link href="/" className="flex items-center space-x-0.5 mb-4">
               <div className="w-16 h-16 rounded-lg overflow-hidden">
                 <img 
                   src="/images/logo.png" 

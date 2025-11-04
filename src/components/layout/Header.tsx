@@ -39,7 +39,7 @@ export const Header: React.FC = () => {
           <Link href="/" className="flex items-center space-x-0.5">
             <div className="w-24 h-24 md:w-28 md:h-28 rounded-lg overflow-hidden">
               <img 
-                src="/images/logo.png" 
+                src="/images/BEA95DDD-E394-4D2A-A562-273A68EACC5B-removebg-preview.png" 
                 alt="Sanitahairbraiding Logo" 
                 className="w-full h-full object-contain"
               />

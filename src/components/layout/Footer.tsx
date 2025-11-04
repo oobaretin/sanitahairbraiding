@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
           {/* Brand */}
           <div className="lg:col-span-1 lg:pr-8">
             <Link href="/" className="flex items-center space-x-0.5 mb-4">
-              <div className="w-16 h-16 flex-shrink-0">
+              <div className="w-20 h-20 md:w-24 h-24 flex-shrink-0">
                 <img 
                   src="/images/BEA95DDD-E394-4D2A-A562-273A68EACC5B-removebg-preview.png" 
                   alt="Sanitahairbraiding Logo" 

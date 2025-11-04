@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
       <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-1 lg:pr-8">
+          <div className="lg:col-span-1 lg:pr-12">
             <Link href="/" className="flex items-center space-x-0.5 mb-4">
               <div className="w-20 h-20 md:w-24 h-24 flex-shrink-0">
                 <img 
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:pl-4">
+          <div className="lg:pl-8">
             <h3 className="font-display font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
